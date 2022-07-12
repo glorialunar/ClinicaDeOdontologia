@@ -3,11 +3,14 @@ window.addEventListener('load', function () {
     const formulario = document.querySelector('#add_new_odontologo');
 
     formulario.addEventListener('submit', function (event) {
+
         const formData = {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
             matricula: document.querySelector('#matricula').value,
         };
+
+        console.log(formData);
 
         const url = '/odontologos/guardar';
         const settings = {

@@ -3,6 +3,7 @@ window.addEventListener('load', function () {
     const formulario = document.querySelector('#add_new_paciente');
 
     formulario.addEventListener('submit', function (event) {
+
         const formData = {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,

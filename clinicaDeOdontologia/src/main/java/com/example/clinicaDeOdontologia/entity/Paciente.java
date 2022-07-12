@@ -10,14 +10,16 @@ import java.util.Set;
 @Table(name = "pacientes")
 public class Paciente {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "paciente_sequence", sequenceName = "paciente_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "paciente_sequence")
+    @Column(name = "paciente_id", nullable = false)
     private Long id;
     private String nombre;
     private String apellido;
     private Integer dni;
     private Date fechaDeAlta;
     private String domicilio;
-    @OneToMany(mappedBy = "paciente")
+    @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Turno> turnos;
 

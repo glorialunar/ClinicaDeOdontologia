@@ -25,9 +25,10 @@ window.addEventListener('load', function () {
                                     ' type="button" onclick="findBy('+ turno.id +')"' +
                                     ' class="btn btn-info btn_id">' + turno.id +
                                     '</button>';
+                                    console.log(turno);
                 turnoRow.innerHTML = '<td>' + updateButton + '</td>' +
-                                        '<td class=\"td_paciente\">' + turno.paciente.nombre.toUpperCase() + '</td>' +
-                                        '<td class=\"td_odontologo\">' + turno.odontologo.nombre.toUpperCase() + '</td>' +
+                                        '<td class=\"td_paciente\">' + turno.paciente.nombre + '</td>' +
+                                        '<td class=\"td_odontologo\">' + turno.odontologo.nombre + '</td>' +
                                         '<td class=\"td_fecha\">' + turno.fecha + '</td>' +
                                         '<td>' + deleteButton + '</td>';
             };

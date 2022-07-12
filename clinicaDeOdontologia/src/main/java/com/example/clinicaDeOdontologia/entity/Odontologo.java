@@ -9,12 +9,14 @@ import java.util.Set;
 @Table(name = "Odontologos")
 public class Odontologo {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "odontologo_sequence", sequenceName = "odontologo_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "odontologo_sequence")
+    @Column(name = "odontologo_id", nullable = false)
     private Long id;
     private String nombre;
     private String apellido;
     private Integer matricula;
-    @OneToMany(mappedBy = "odontologo")
+    @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Turno> turnos;
 

@@ -47,8 +47,8 @@ window.addEventListener('load', function () {
     });
 
     function resetUploadForm(){
-        document.querySelector('#paciente_id').value = "";
-        document.querySelector('#odontologo_id').value = "";
+        document.querySelector('#paciente').value = "";
+        document.querySelector('#odontologo').value = "";
         document.querySelector('#fecha').value = "";
     }
 
